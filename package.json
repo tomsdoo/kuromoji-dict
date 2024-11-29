@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "type": "module",
   "main": "index.js",
+  "files": [
+    "dict",
+    "index.js"
+  ],
   "scripts": {
+    "build-dict": "tsx src/buildDict",
     "test": "vitest"
   },
   "keywords": [
@@ -13,7 +18,9 @@
   "license": "MIT",
   "description": "dict directory for kuromoji.js",
   "devDependencies": {
+    "@tsconfig/node22": "22.0.0",
     "@types/node": "22.10.1",
+    "tsx": "4.19.2",
     "vitest": "2.1.6"
   }
 }
