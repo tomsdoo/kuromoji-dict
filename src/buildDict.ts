@@ -10,20 +10,8 @@ if (!dockerExists) {
   process.exit(1);
 }
 
-const images = await execute(
-  `docker image ls ${REPOSITORY_NAME}:${TAG_NAME} --format json`,
-).then((stdout) =>
-  stdout
-    .split("\n")
-    .filter(Boolean)
-    .map((line) => JSON.parse(line)),
-);
-for (const { ID } of images) {
-  await execute(`docker image rm ${ID}`);
-}
-
 await execute(
-  `docker image build -f Dockerfile -t ${REPOSITORY_NAME}:${TAG_NAME} .`,
+  `docker image build --no-cache -f Dockerfile -t ${REPOSITORY_NAME}:${TAG_NAME} .`,
 );
 
 let exited = false;
@@ -41,3 +29,5 @@ await execute(`docker cp ${CONTAINER_NAME}:/usr/local/app/kuromoji.js/dict ./`);
 
 await execute(`docker container stop ${CONTAINER_NAME}`);
 exited = true;
+
+await execute(`docker image rm ${REPOSITORY_NAME}:${TAG_NAME}`);
