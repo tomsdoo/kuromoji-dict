@@ -8,7 +8,7 @@
     "index.js"
   ],
   "scripts": {
-    "build-dict": "tsx src/buildDict",
+    "build-dict": "sh buildDict.sh",
     "test": "vitest"
   },
   "keywords": [
