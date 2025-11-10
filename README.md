@@ -19,13 +19,6 @@ npm install @tomsd/kuromoji-dict
 
 # Usage
 
-with docker
-
-``` sh
-docker run --rm -v "$(pwd)/additionals":/usr/local/additionals -v "$(pwd)/results":/usr/local/results ghcr.io/tomsdoo/kuromoji-dict:main
-```
-
-
 ``` typescript
 import { builder } from "kuromoji";
 import { getDictPath } from "@tomsd/kuromoji-dict";
@@ -47,4 +40,12 @@ new Promise((resolve, reject) => {
   .then(console.log)
   .catch(console.log);
 
+```
+
+## just building the dict with docker
+
+put the csv files in additionals directory, and docker run with binding the additionals directory and results directory
+
+``` sh
+docker run --rm -v "$(pwd)/additionals":/usr/local/additionals -v "$(pwd)/results":/usr/local/results ghcr.io/tomsdoo/kuromoji-dict:main
 ```
