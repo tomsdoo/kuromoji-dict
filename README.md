@@ -19,6 +19,13 @@ npm install @tomsd/kuromoji-dict
 
 # Usage
 
+with docker
+
+``` sh
+docker run --rm -v "$(pwd)/additionals":/usr/local/additionals -v "$(pwd)/results":/usr/local/results ghcr.io/tomsdoo/kuromoji-dict:main
+```
+
+
 ``` typescript
 import { builder } from "kuromoji";
 import { getDictPath } from "@tomsd/kuromoji-dict";
