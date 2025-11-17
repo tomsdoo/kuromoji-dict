@@ -18,9 +18,9 @@
   "license": "MIT",
   "description": "dict directory for kuromoji.js",
   "devDependencies": {
-    "@tsconfig/node22": "22.0.2",
-    "@types/node": "24.10.0",
+    "@tsconfig/node22": "22.0.4",
+    "@types/node": "24.10.1",
     "tsx": "4.20.6",
-    "vitest": "4.0.8"
+    "vitest": "4.0.10"
   }
 }
