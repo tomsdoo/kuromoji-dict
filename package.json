@@ -19,7 +19,7 @@
   "description": "dict directory for kuromoji.js",
   "devDependencies": {
     "@tsconfig/node22": "22.0.5",
-    "@types/node": "25.9.3",
+    "@types/node": "26.0.0",
     "tsx": "4.22.4",
     "vitest": "4.1.9"
   }
